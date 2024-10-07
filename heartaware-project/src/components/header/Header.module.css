@@ -1,0 +1,47 @@
+.nav {
+   background-color: #D9D9D9;
+   padding: 2rem;
+}
+
+.content {
+   margin: 0 12rem;
+   display: flex;
+   justify-content: space-between;
+}
+
+.content img {
+   width: 100%;
+   max-width: 30rem;
+}
+
+.links {
+   display: flex;
+   gap: 2rem;
+}
+
+.links a {
+   padding: 1rem;
+   font-size: 2rem;
+   text-decoration: none;
+   color: black;
+}
+
+.anlgrafica {
+   color: white;
+}
+
+.anlgrafica:hover {
+   color: rgb(70, 66, 66);
+}
+
+.avcardiaca {
+   font-weight: 600;
+   color: white !important;
+   background-color: #FF4747;
+   border-radius: 1rem;
+   transition: background-color 0.3s ease; 
+}
+
+.avcardiaca:hover {
+   background-color: #ff1c1c; 
+}
