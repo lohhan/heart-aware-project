@@ -2,6 +2,7 @@ import styles from "./Home.module.css";
 import icon1 from "../../assets/Home/icone1.svg"
 import icon2 from "../../assets/Home/icone2.svg"
 import icon3 from "../../assets/Home/icone3.svg"
+import Form from 'react-bootstrap/Form';
 function Home() {
    return (
       <div className= {styles.container}>
@@ -29,8 +30,18 @@ function Home() {
 
             <div className={styles.formularios}>
                <div className={styles.formulario1}>
+               <Form className={styles.formulario1}>
+                  <Form.Group className={styles.mb-3} controlId="formGroupEmail">
+                  <Form.Label>Email address</Form.Label>
+                  <Form.Control type="email" placeholder="Enter email" />
+                  </Form.Group>
+                  <Form.Group className={styles.mb-3} controlId="formGroupPassword">
+                  <Form.Label>Password</Form.Label>
+                  <Form.Control type="password" placeholder="Password" />
+                  </Form.Group>
+               </Form>
                </div>       
-            </div>     
+            </div>       
          </div>
       </div>
    );
