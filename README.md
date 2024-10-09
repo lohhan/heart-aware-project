@@ -7,3 +7,8 @@ Este projeto é um site que permite ao usuário inserir seus dados pessoais e de
 - **Previsão de Risco**: O usuário pode inserir informações sobre sua saúde para receber uma avaliação do risco de ataque cardíaco.
 - **Análise Gráfica**: A aplicação apresenta gráficos que visualizam tendências e padrões dos dados do dataset utilizado para treinar o modelo. Esses gráficos ajudam a entender melhor os fatores que influenciam o risco cardíaco.
 
+## Site
+- https://heart-aware-project.vercel.app/
+
+![image](https://github.com/user-attachments/assets/6ce1b79c-9361-42de-9caa-1aa0ee66f4e3)
+
