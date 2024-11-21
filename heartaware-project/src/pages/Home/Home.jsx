@@ -4,6 +4,7 @@ import icon2 from "../../assets/Home/icone2.svg";
 import icon3 from "../../assets/Home/icone3.svg";
 import FormComponent from "../../components/formulario/Form";
 
+
 function Home() {
   return (
     <div className={styles.container}>
