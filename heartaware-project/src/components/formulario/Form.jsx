@@ -1,56 +1,47 @@
 import styles from "./Form.module.css";
 import api from '../../services/api' // Rota para o arquivo backend
 import Modal from 'react-modal';
-import { useEffect, useState, useRef } from "react";
-const FormComponent = () => {
-const [results, setResults] = useState(null);
-const [isModalOpen, setIsModalOpen] = useState(false); // Estado para controlar a abertura do modal
-const inputAge = useRef()
-const inputGen = useRef()
-const inputAg = useRef()
-const inputVasos = useRef()
-const inputPain = useRef()
-const inputPress = useRef()
-const inputColes = useRef()
-const inputSugar = useRef()
-const inputEletro = useRef()
-const inputFreq = useRef()
+import { useState, useRef } from "react";
 
-async function createResults() {
-  const response = await api.post('api/previsao/nova-previsao',{ //rota para o post
-    age: inputAge.current.value,
-    sexo: inputGen.current.value,
-    angina: inputAg.current.value,
-    vasos: inputVasos.current.value,
-    dor_peito: inputPain.current.value,
-    pressao_arterial: inputPress.current.value,
-    colesterol: inputColes.current.value,
-    acucar: inputSugar.current.value,
-    eletro: inputEletro.current.value,
-    freq_max: inputFreq.current.value  
-  });
-  const riscoStr = response.data.risco; // Ex: "[1]"
-  const risco = parseInt(riscoStr.replace(/[\[\]]/g, ""), 10); // Remove os colchetes e converte para número
-  if (risco === 1) {
-    setResults("Você tem risco de problemas cardíacos. Consulte um médico.");
-  } else if (risco === 0) {
-    setResults("Você não tem risco de problemas cardíacos. Continue cuidando da sua saúde!");
+function FormComponent () {
+  
+  const [results, setResults] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false); 
+
+  const inputAge = useRef()
+  const inputGen = useRef()
+  const inputAg = useRef()
+  const inputVasos = useRef()
+  const inputPain = useRef()
+  const inputPress = useRef()
+  const inputColes = useRef()
+  const inputSugar = useRef()
+  const inputEletro = useRef()
+  const inputFreq = useRef()
+
+  async function createResults() {
+    const response = await api.post('api/previsao/nova-previsao',{ //rota para o post
+      age: inputAge.current.value,
+      sexo: inputGen.current.value,
+      angina: inputAg.current.value,
+      vasos: inputVasos.current.value,
+      dor_peito: inputPain.current.value,
+      pressao_arterial: inputPress.current.value,
+      colesterol: inputColes.current.value,
+      acucar: inputSugar.current.value,
+      eletro: inputEletro.current.value,
+      freq_max: inputFreq.current.value  
+    });
+    
+    const riscoStr = response.data.risco; 
+    if (riscoStr == "[1]") {
+      setResults("ComRisco");
+    } else if (riscoStr == "[0]") {
+      setResults("SemRisco");
+    }
+
+    setIsModalOpen(true);
   }
-
-  setIsModalOpen(true);
-}
-
-
-async function getResults() {
-  const resultsFromApi = await api.get('/') //rota para get dos resultados
-
-  setResults(resultsFromApi.data)
-  console.log(results)
-}
-
-useEffect(()=>{
-  console.log("Resultados atualizados:", results);
-}, [results])
 
   return (
     <form className={styles.formContainer}>
@@ -186,14 +177,30 @@ useEffect(()=>{
         className={styles.modalContent} // Estilize o modal com classes CSS personalizadas
         overlayClassName={styles.overlay} // Estilize a sobreposição do modal
       >
-        <h3>Resultado:</h3>
-        <p>{results}</p>
-        <button onClick={() => setIsModalOpen(false)}>Fechar</button>
+      {results === "ComRisco" ? (
+        <>
+          <h3>⚠️ Atenção: Risco de Problemas Cardíacos Detectado!</h3>
+          <p>Com base nas informações fornecidas, você pode estar em um grupo de risco para problemas cardiovasculares. <br /> Recomendamos que você consulte um médico o mais breve possível para uma avaliação detalhada.</p>
+          <br />
+          <h3>Dicas para sua saúde</h3>
+          <ul className={styles.listadicas}>
+            <li>Mantenha uma dieta balanceada.</li>
+            <li>Pratique exercícios regulares.</li>
+            <li>Controle o estresse.</li>
+          </ul>
+          <a className={styles.saibamais} href="https://www.gov.br/saude/pt-br/assuntos/saude-brasil/eu-quero-me-alimentar-melhor/noticias/2022/manter-a-saude-do-coracao-em-dia-depende-de-um-estilo-de-vida-saudavel">Saiba mais</a>
+          <br />
+        </>
+      ) : (
+        <>
+          <h3>✅ Tudo certo com sua saúde cardiovascular!</h3>  
+          <p>Parabéns! Não identificamos nenhum sinal de risco relacionado a problemas cardiovasculares com base nas informações fornecidas.</p>  
+        </>
+      )}
+        <button className={styles.botaofechar} onClick={() => setIsModalOpen(false)}>Fechar</button>
       </Modal>
     </form>
 
-  
-      
   );
 };
 

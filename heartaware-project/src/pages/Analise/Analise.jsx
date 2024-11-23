@@ -65,7 +65,7 @@ function Analise(){
             </div>
             <div className={styles.analiseConclusao}>
                 <div className={styles.analiseConclusaoTexto}>
-                    <h1>Insight</h1>
+                    <h1>Insights</h1>
                     <p>A análise mostrou um aumento significativo de risco de ataque cardíaco entre 35 e 55 anos, 
                         que se estabiliza após os 55 e volta a crescer a partir dos 70. Nos idosos, esse risco é esperado devido a fatores como idade avançada e 
                         doenças crônicas. Já nos adultos, a situação parece estar ligada a um estilo de vida pouco saudável.
