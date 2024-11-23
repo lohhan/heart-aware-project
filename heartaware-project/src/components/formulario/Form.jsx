@@ -188,7 +188,7 @@ function FormComponent () {
             <li>Pratique exercícios regulares.</li>
             <li>Controle o estresse.</li>
           </ul>
-          <a className={styles.saibamais} href="https://www.gov.br/saude/pt-br/assuntos/saude-brasil/eu-quero-me-alimentar-melhor/noticias/2022/manter-a-saude-do-coracao-em-dia-depende-de-um-estilo-de-vida-saudavel">Saiba mais</a>
+          <a className={styles.saibamais} href="https://www.gov.br/saude/pt-br/assuntos/saude-brasil/eu-quero-me-alimentar-melhor/noticias/2022/manter-a-saude-do-coracao-em-dia-depende-de-um-estilo-de-vida-saudavel" target="_blank">Saiba mais</a>
           <br />
         </>
       ) : (
