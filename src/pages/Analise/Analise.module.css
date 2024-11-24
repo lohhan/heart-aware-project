@@ -1,0 +1,92 @@
+.analiseContaienr{
+    display: flex;
+    flex-direction: column;
+}
+.analiseIntro{
+    display: flex;
+    flex-direction: column;
+    margin: 0 12rem;
+    width: 100%;
+    max-width: 100rem;
+    margin-top: 6.5rem;
+}
+.analiseIntro h1{
+    font-size: 4rem;
+    font-weight: bold;
+}
+.graficos{
+    display: flex;
+    flex-direction: column;
+    margin: 0 12rem;
+    margin-top: 3rem;
+}
+.graficos h1{
+    font-weight: bold;
+    font-size: 3rem;
+}
+.graficosLinha{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.graficosLinha2{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 5rem;
+}
+.graficosSolo{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+}
+.graficosSolo p{
+    width: 100%;
+    max-width: 50rem;
+}
+.graficosSolo img{
+    width: 100%;
+    max-width: 50rem;
+}
+.analiseConclusao{
+    display: flex;
+    flex-direction: row;
+    margin: 0 12rem;
+    gap: 5rem;
+}
+.analiseConclusaoTexto{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100rem;
+    margin-bottom: 5rem;
+    margin-top: 5rem;
+}
+.analiseConclusaoTexto h1{
+    font-size: 4rem;
+    font-weight: bold;
+}
+.matrizCo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 12rem;
+    margin-top: 5rem;
+}
+.matrizConteudo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+    gap: 2rem;
+}
+.matrizConteudo h1{
+    font-size: 4rem;
+    font-weight: bold;
+}
+.matrizConteudo img{
+    width: 100%;
+    max-width: 100rem;
+}

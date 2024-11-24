@@ -1,0 +1,16 @@
+.footerContainer {
+  background-color: #d9d9d9;
+  padding: 4rem;
+  display: flex;
+  justify-content: center;
+}
+.footerInfos {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+.footerInfos p {
+  display: flex;
+  align-self: center;
+  margin: 0;
+}

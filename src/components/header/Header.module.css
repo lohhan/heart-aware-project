@@ -1,0 +1,39 @@
+.nav {
+  background-color: #d9d9d9;
+  padding: 2rem;
+}
+
+.content {
+  margin: 0 12rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.content img {
+  width: 100%;
+  max-width: 30rem;
+}
+
+.links {
+  display: flex;
+  gap: 2rem;
+}
+
+.links a {
+  padding: 1rem;
+  font-size: 2rem;
+  text-decoration: none;
+  color: black;
+}
+
+.anlgrafica {
+  font-weight: 600;
+  color: white !important;
+  background-color: #ff4747;
+  border-radius: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.anlgrafica:hover {
+  background-color: #ff1c1c;
+}
