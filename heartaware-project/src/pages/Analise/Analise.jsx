@@ -12,68 +12,69 @@ function Analise(){
     return(
         <div className={styles.analiseContainer}>
             <div className={styles.analiseIntro}>
-                <h1>Introdução</h1>
-                <p>O risco de ataque cardíaco é uma preocupação importante, com as doenças cardiovasculares representando 31% das mortes globais, segundo a OMS. 
-                    Identificar fatores de risco, como idade, colesterol e pressão arterial, é crucial para a prevenção. 
-                    Este estudo visa investigar essas variáveis e desenvolver um modelo preditivo para identificar pessoas com maior risco, 
-                    buscando melhorar a prevenção e a tomada de decisões na saúde.</p>
+                <h1>Introduction</h1>
+                <p>The risk of heart attack is a significant concern, with cardiovascular diseases accounting for 31% of global deaths, according to the WHO. 
+                    Identifying risk factors such as age, cholesterol, and blood pressure is crucial for prevention. 
+                    This study aims to investigate these variables and develop a predictive model to identify individuals at higher risk, 
+                    seeking to improve prevention and decision-making in healthcare.</p>
             </div>
             <div className={styles.graficos}>
                 <div className={styles.graficosLinha}>
                     <div className={styles.graficosSolo}>
-                    <h1>Idade</h1>
+                    <h1>Age</h1>
                     <img src={idade} alt="" />
-                    <p>Conclui-se que a idade mais frequente esteve na faixa de 50-60.</p>
+                    <p>It is concluded that the most frequent age range was between 55 and 65.</p>
                     </div>
 
                     <div className={styles.graficosSolo}>
-                    <h1>Sexo</h1>
+                    <h1>Sex</h1>
                     <img src={sexo} alt="" />
-                    <p>Após o balanceamento da base, a distribuição de gênero ficou 50/50.</p>
+                    <p>After balancing the dataset, the gender distribution was 68.8/31.2.</p>
                     </div>
 
                     <div className={styles.graficosSolo}>
-                    <h1>Angina induzida por exercício</h1>
+                    <h1>Exercise-induced angina</h1>
                     <img src={pressao} alt="" />
-                    <p>Conclui-se que aproximadamente 3/10 dos pacientes sofrem com angina após exercícios físicos.</p>
+                    <p>It is concluded that approximately 3/10 of patients suffer from angina after physical exercise.</p>
                     </div>
                 </div>
 
                 <div className={styles.graficosLinha2}>
                 <div className={styles.graficosSolo}>
-                <h1>Tipos de Dor no peito</h1>
+                <h1>Types of Chest Pain</h1>
                     <img src={dor} alt="" />
-                    <p>O tipo de dor mais frequente é o de Angina Típica.</p>
+                    <p>The most common type of pain is Typical Angina.</p>
                 </div>
                 <div className={styles.graficosSolo}>
-                    <h1>Frequência Máxima</h1>
+                    <h1>Maximum Frequency</h1>
                     <img src={colesterol} alt="" />
-                    <p>As maiores frequências registradas estão na faixa entre 160-170.</p>
+                    <p>The highest recorded frequencies are in the range between 155-170.</p>
                 </div>
                 <div className={styles.graficosSolo}>
-                    <h1>Açúcar no Sangue</h1>
+                    <h1>Blood Sugar</h1>
                     <img src={acucar} alt="" />
-                    <p>Conclui-se que a grande maioria dos pacientes possuem glicose maior que 120mg/dl.</p>
+                    <p>It is concluded that the vast majority of patients have glucose levels greater than 120 mg/dl.</p>
                 </div>
                 </div>
             </div>
             <div className={styles.matrizCo}>
                 <div className={styles.matrizConteudo}>
-                <h1>Matriz de Correlação</h1>
+                <h1>Correlation Matrix</h1>
                 <img src={matriz} alt="" />
                 </div>
             </div>
             <div className={styles.analiseConclusao}>
                 <div className={styles.analiseConclusaoTexto}>
                     <h1>Insights</h1>
-                    <p>A análise mostrou um aumento significativo de risco de ataque cardíaco entre 35 e 55 anos, 
-                        que se estabiliza após os 55 e volta a crescer a partir dos 70. Nos idosos, esse risco é esperado devido a fatores como idade avançada e 
-                        doenças crônicas. Já nos adultos, a situação parece estar ligada a um estilo de vida pouco saudável.
+                    <p>The analysis showed a significant increase in the risk of heart attack between the ages of 35 and 55, 
+                        which stabilizes after 55 and rises again from 70 onward. Among the elderly, 
+                        this risk is expected due to factors such as advanced age and chronic diseases. 
+                        In adults, however, the situation seems to be linked to an unhealthy lifestyle.
                         <br /><br />
-                        Uma possível explicação é a dieta moderna, rica em gorduras e alimentos processados, 
-                        combinada com falta de exercícios e altos níveis de estresse. Esses fatores elevam a pressão arterial e favorecem o acúmulo de placas nas artérias, 
-                        contribuindo para o risco cardíaco. Dessa forma, políticas de prevenção devem focar também em educar essa faixa etária sobre a importância de 
-                        hábitos mais saudáveis, ajudando a reduzir as ocorrências de problemas cardíacos precoces.</p>
+                        A possible explanation is the modern diet, high in fats and processed foods, combined with a lack of exercise and high levels of stress. 
+                        These factors increase blood pressure and promote plaque buildup in the arteries, contributing to cardiac risk. 
+                        Thus, prevention policies should also focus on educating this age group about the importance of healthier habits, 
+                        helping to reduce the occurrence of early heart problems.</p>
                 </div>
                 <img src={distribuicao} alt="" />
             </div>

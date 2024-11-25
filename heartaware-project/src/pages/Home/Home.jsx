@@ -10,36 +10,35 @@ function Home() {
     <div className={styles.container}>
       <div className={styles.introducao}>
         <p className={styles.introducaoTitulo}>
-          Bem-vindo ao <span>HeartAware!</span>
+        Welcome to <span>HeartAware!</span>
         </p>
         <p>
-          O HeartAware é seu aliado na saúde cardíaca, ajudando a identificar
-          sinais de possíveis ataques cardíacos.
+        HeartAware is your ally in heart health, helping you identify signs of possible heart attacks.
         </p>
       </div>
       <div className={styles.avaliacao}>
-        <p className={styles.avaliacaoTitulo}>Avaliacao Cardiaca</p>
+        <p className={styles.avaliacaoTitulo}>Cardiac Assessment</p>
         <div className={styles.avaliacaoIcones}>
           <div className={styles.icone1}>
             <img src={icon1} />
             <p>
-              Você pode realizar um teste simples e eficaz para identificar
-              possíveis sinais de risco de ataque cardíaco.
+            You can perform a simple and effective test to identify
+            possible signs of heart attack risk.
             </p>
           </div>
           <div className={styles.icone2}>
             <img src={icon2} />
             <p>
-              Com base em suas respostas e informações pessoais, nossa
-              tecnologia avançada analisará seus dados e fornecerá uma avaliação
-              detalhada, ajudando você a tomar decisões informadas sobre sua
-              saúde.
+            Based on your responses and personal information, our
+              advanced technology will analyze your data and provide an assessment
+              detailed information, helping you make informed decisions about your
+              health.
             </p>
           </div>
           <div className={styles.icone3}>
             <img src={icon3} />
             <p>
-              Priorize seu bem-estar e fique atento aos sinais do seu coração!
+            Prioritize your well-being and pay attention to the signals from your heart!
             </p>
           </div>
           <br />

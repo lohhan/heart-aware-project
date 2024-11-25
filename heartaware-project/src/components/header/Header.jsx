@@ -11,7 +11,7 @@ function Header() {
         </Link>
         <div className={styles.links}>
           <Link to="/analiseGrafica" className={styles.anlgrafica}>
-            Análise Gráfica
+          Graphic Analysis
           </Link>
         </div>
       </div>

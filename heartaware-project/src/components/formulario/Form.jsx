@@ -19,7 +19,30 @@ function FormComponent () {
   const inputEletro = useRef()
   const inputFreq = useRef()
 
+  const validateForm = () => {
+    const fields = [
+      { ref: inputAge, label: "Age" },
+      { ref: inputGen, label: "Sex" },
+      { ref: inputAg, label: "Exercise-Induced Angina" },
+      { ref: inputVasos, label: "Number of Affected Vessels" },
+      { ref: inputPain, label: "Type of Chest Pain" },
+      { ref: inputPress, label: "Blood Pressure" },
+      { ref: inputColes, label: "Cholesterol" },
+      { ref: inputSugar, label: "Sugar on Fasting" },
+      { ref: inputEletro, label: "Resting Electrocardiogram" },
+      { ref: inputFreq, label: "Maximum Heart Rate" },
+    ];
+    for (let field of fields) {
+      if (!field.ref.current.value || field.ref.current.value === "") {
+        alert(`Please fill the field "${field.label}".`);
+        return false;
+      }
+    }
+    return true;
+  };
+
   async function createResults() {
+    if(!validateForm()) return;
     const response = await api.post('api/previsao/nova-previsao',{ //rota para o post
       age: inputAge.current.value,
       sexo: inputGen.current.value,
@@ -47,31 +70,31 @@ function FormComponent () {
     <form className={styles.formContainer}>
       <div className="mb-3">
         <label className="form-label">
-          <p>Idade</p>
+          <p>Age</p>
         </label>
         <input type="number" className={`form-control ${styles.largeInput}`} ref={inputAge}/>
       </div>
 
       <div className="mb-3">
         <label className="form-label">
-          <p>Sexo</p>
+          <p>Sex</p>
         </label>
         <select className={`form-control ${styles.largeInput}`} ref={inputGen}>
           <option value="" disabled selected>
-            Selecione uma opção
+          Select an option
           </option>
-          <option value="1">Masculino</option>
-          <option value="0">Feminino</option>
+          <option value="1">Masculine</option>
+          <option value="0">Feminine</option>
         </select>
       </div>
 
       <div className="mb-3">
         <label className="form-label">
-          <p>Angina Induzida por Exercício?</p>
+          <p>Exercise-Induced Angina?</p>
         </label>
         <select className={`form-control ${styles.largeInput}`} ref={inputAg}>
           <option value="" disabled selected>
-            Selecione uma opção
+          Select an option
           </option>
           <option value="1">Yes</option>
           <option value="0">No</option>
@@ -80,11 +103,11 @@ function FormComponent () {
 
       <div className="mb-3">
         <label className="form-label">
-          <p>Número de Vasos Afetados</p>
+          <p>Number of Affected Vessels</p>
         </label>
         <select className={`form-control ${styles.largeInput}`} ref={inputVasos}>
           <option value="" disabled selected>
-            Selecione uma opção
+          Select an option
           </option>
           <option value="0">0</option>
           <option value="1">1 </option>
@@ -95,23 +118,23 @@ function FormComponent () {
 
       <div className="mb-3">
         <label className="form-label">
-          <p>Tipo de Dor no Peito</p>
+          <p>Type of Chest Pain</p>
         </label>
         <select className={`form-control ${styles.largeInput}`} ref={inputPain}>
           <option value="" disabled selected>
-            Selecione uma opção
+          Select an option
           </option>
-          <option value="0">Angina Típica</option>
-          <option value="1">Angina Atípica</option>
-          <option value="2">Dor não Anginosa</option>
-          <option value="3">Assintomática</option>
+          <option value="0">Typical Angina</option>
+          <option value="1">Atypical Angina</option>
+          <option value="2">Non-anginal pain</option>
+          <option value="3">Asymptomatic</option>
         </select>
       </div>
 
       <div className="mb-3">
         <label className="form-label">
           <p>
-            Pressão Arterial <span>(mm Hg)</span>
+          Blood Pressure <span>(mm Hg)</span>
           </p>
         </label>
         <input type="number" className={`form-control ${styles.largeInput}`} ref={inputPress}/>
@@ -120,7 +143,7 @@ function FormComponent () {
       <div className="mb-3">
         <label className="form-label">
           <p>
-            Colesterol <span>(mg/dl)</span>
+          Cholesterol <span>(mg/dl)</span>
           </p>
         </label>
         <input type="number" className={`form-control ${styles.largeInput}`} ref={inputColes}/>
@@ -129,12 +152,12 @@ function FormComponent () {
       <div className="mb-3">
         <label className="form-label">
           <p>
-            Açúcar em Jejum <span>(&gt; 120 mg/dl)</span> ?
+          Sugar on Fasting <span>(&gt; 120 mg/dl)</span> ?
           </p>
         </label>
         <select className={`form-control ${styles.largeInput}`} ref={inputSugar}>
           <option value="" disabled selected>
-            Selecione uma opção
+          Select an option
           </option>
           <option value="1">Yes</option>
           <option value="0">No</option>
@@ -143,30 +166,30 @@ function FormComponent () {
 
       <div className="mb-3">
         <label className="form-label">
-          <p>Eletrocardiograma em Repouso</p>
+          <p>Resting Electrocardiogram</p>
         </label>
         <select className={`form-control ${styles.largeInput}`} ref={inputEletro}>
           <option value="" disabled selected>
-            Selecione uma opção
+          Select an option
           </option>
-          <option value="0">Eletrocardiograma normal</option>
-          <option value="1">Anormalidade na onda ST-T</option>
+          <option value="0">Normal electrocardiogram</option>
+          <option value="1">ST-T wave abnormality</option>
           <option value="2">
-            Presença de hipertrofia ventricular esquerda
+          Presence of left ventricular hypertrophy
           </option>
         </select>
       </div>
 
       <div className={`mb-3 ${styles.lastInput}`}>
         <label className="form-label">
-          <p>Frequência Cardíaca Máxima</p>
+          <p>Maximum Heart Rate</p>
         </label>
         <input type="number" className={`form-control ${styles.largeInput}`} ref={inputFreq}/>
       </div>
 
       <div className={`mb-3 ${styles.lastInput}`}>
         <label className="form-label">
-          <button className={styles.botaogerar} type="button" onClick={createResults}>Gerar resultados</button>
+          <button className={styles.botaogerar} type="button" onClick={createResults}>Generate results</button>
         </label>
       </div>
 
@@ -179,25 +202,25 @@ function FormComponent () {
       >
       {results === "ComRisco" ? (
         <>
-          <h3>⚠️ Atenção: Risco de Problemas Cardíacos Detectado!</h3>
-          <p>Com base nas informações fornecidas, você pode estar em um grupo de risco para problemas cardiovasculares. <br /> Recomendamos que você consulte um médico o mais breve possível para uma avaliação detalhada.</p>
+          <h3>⚠️ Attention: Risk of Heart Problems Detected!</h3>
+          <p>Based on the information provided, you may be in a risk group for cardiovascular problems. <br /> We recommend that you see a doctor as soon as possible for a detailed evaluation.</p>
           <br />
-          <h3>Dicas para sua saúde</h3>
+          <h3>Tips for your health</h3>
           <ul className={styles.listadicas}>
-            <li>Mantenha uma dieta balanceada.</li>
-            <li>Pratique exercícios regulares.</li>
-            <li>Controle o estresse.</li>
+            <li>Maintain a balanced diet.</li>
+            <li>Practice regular exercise.</li>
+            <li>Control stress.</li>
           </ul>
-          <a className={styles.saibamais} href="https://www.gov.br/saude/pt-br/assuntos/saude-brasil/eu-quero-me-alimentar-melhor/noticias/2022/manter-a-saude-do-coracao-em-dia-depende-de-um-estilo-de-vida-saudavel" target="_blank">Saiba mais</a>
+          <a className={styles.saibamais} href="https://www.gov.br/saude/pt-br/assuntos/saude-brasil/eu-quero-me-alimentar-melhor/noticias/2022/manter-a-saude-do-coracao-em-dia-depende-de-um-estilo-de-vida-saudavel" target="_blank">Find out more</a>
           <br />
         </>
       ) : (
         <>
-          <h3>✅ Tudo certo com sua saúde cardiovascular!</h3>  
-          <p>Parabéns! Não identificamos nenhum sinal de risco relacionado a problemas cardiovasculares com base nas informações fornecidas.</p>  
+          <h3>✅ Everything is fine with your cardiovascular health!</h3>  
+          <p>Congratulations! We did not identify any risk signals related to cardiovascular problems based on the information provided.</p>  
         </>
       )}
-        <button className={styles.botaofechar} onClick={() => setIsModalOpen(false)}>Fechar</button>
+        <button className={styles.botaofechar} onClick={() => setIsModalOpen(false)}>Close</button>
       </Modal>
     </form>
 
