@@ -19,7 +19,30 @@ function FormComponent () {
   const inputEletro = useRef()
   const inputFreq = useRef()
 
+  const validateForm = () => {
+    const fields = [
+      { ref: inputAge, label: "Age" },
+      { ref: inputGen, label: "Sex" },
+      { ref: inputAg, label: "Exercise-Induced Angina" },
+      { ref: inputVasos, label: "Number of Affected Vessels" },
+      { ref: inputPain, label: "Type of Chest Pain" },
+      { ref: inputPress, label: "Blood Pressure" },
+      { ref: inputColes, label: "Cholesterol" },
+      { ref: inputSugar, label: "Sugar on Fasting" },
+      { ref: inputEletro, label: "Resting Electrocardiogram" },
+      { ref: inputFreq, label: "Maximum Heart Rate" },
+    ];
+    for (let field of fields) {
+      if (!field.ref.current.value || field.ref.current.value === "") {
+        alert(`Please fill the field "${field.label}".`);
+        return false;
+      }
+    }
+    return true;
+  };
+
   async function createResults() {
+    if(!validateForm()) return;
     const response = await api.post('api/previsao/nova-previsao',{ //rota para o post
       age: inputAge.current.value,
       sexo: inputGen.current.value,
@@ -95,7 +118,7 @@ function FormComponent () {
 
       <div className="mb-3">
         <label className="form-label">
-          <p>Tipo de Dor no Peito</p>
+          <p>Type of Chest Pain</p>
         </label>
         <select className={`form-control ${styles.largeInput}`} ref={inputPain}>
           <option value="" disabled selected>
