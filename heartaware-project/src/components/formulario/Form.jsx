@@ -57,9 +57,9 @@ function FormComponent () {
     });
     
     const riscoStr = response.data.risco; 
-    if (riscoStr == "[1]") {
+    if (riscoStr == "1") {
       setResults("ComRisco");
-    } else if (riscoStr == "[0]") {
+    } else if (riscoStr == "0") {
       setResults("SemRisco");
     }
 
